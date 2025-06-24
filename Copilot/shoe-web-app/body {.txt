@@ -1,0 +1,22 @@
+body {
+  background-color: #f8fafc;
+}
+
+.shoe-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shoe-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 220px;
+}
+
+.btn[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

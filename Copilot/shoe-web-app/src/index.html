@@ -1,0 +1,126 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copilot Shoe Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .hero-header {
+      min-height: 50vh;
+      background: linear-gradient(rgba(30, 34, 40, 0.7), rgba(30, 34, 40, 0.7)),
+        url('https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      color: #fff;
+      padding: 0;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    .hero-content {
+      z-index: 2;
+      position: relative;
+    }
+
+    .hero-header .btn-primary {
+      background: #0d6efd;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .hero-header .btn-primary:hover {
+      background: #0056b3;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-header {
+        min-height: 35vh;
+        padding: 2rem 0;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Copilot Shoe Shop</a>
+    </div>
+  </nav>
+  <header class="hero-header d-flex align-items-center justify-content-center text-center text-white">
+    <div class="container hero-content">
+      <div class="d-flex justify-content-center gap-3 mb-3 flex-wrap">
+        <img src="{{ url_for('static', filename='images/images.jpg') }}" alt="Shoe 1" class="rounded shadow" style="max-width:90px; background:#fff; padding:8px;">
+        <img src="{{ url_for('static', filename='images/download.jpg') }}" alt="Shoe 2" class="rounded shadow" style="max-width:90px; background:#fff; padding:8px;">
+        <img src="{{ url_for('static', filename='images/pixel.jpg') }}" alt="Shoe 3" class="rounded shadow" style="max-width:90px; background:#fff; padding:8px;">
+      </div>
+      <h1 class="display-4 fw-bold mb-3">Copilot Shoe Shop</h1>
+      <p class="lead mb-4">Step into style. Discover your perfect pair from our curated collection.</p>
+      <a href="#shop" class="btn btn-lg btn-light fw-semibold shadow">Shop Now</a>
+    </div>
+  </header>
+  <main class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="shop">
+      <!-- Example Shoe Cards (static) -->
+      <div class="col">
+        <div class="card h-100 shadow-sm shoe-card">
+          <img src="https://images.unsplash.com/photo-1517263904808-5dc0d6e1ad21?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Classic Sneakers">
+          <div class="card-body">
+            <h5 class="card-title">Classic Sneakers</h5>
+            <p class="card-text text-muted">$59.99</p>
+            <p class="card-text">Timeless comfort and style for everyday wear.</p>
+          </div>
+          <div class="card-footer bg-white border-0">
+            <button class="btn btn-outline-primary w-100" disabled>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm shoe-card">
+          <img src="https://images.unsplash.com/photo-1528701800484-905dffb7c6b4?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Running Shoes">
+          <div class="card-body">
+            <h5 class="card-title">Running Shoes</h5>
+            <p class="card-text text-muted">$89.99</p>
+            <p class="card-text">Lightweight and durable for your daily runs.</p>
+          </div>
+          <div class="card-footer bg-white border-0">
+            <button class="btn btn-outline-primary w-100" disabled>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm shoe-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Leather Boots">
+          <div class="card-body">
+            <h5 class="card-title">Leather Boots</h5>
+            <p class="card-text text-muted">$129.99</p>
+            <p class="card-text">Premium leather boots for a bold statement.</p>
+          </div>
+          <div class="card-footer bg-white border-0">
+            <button class="btn btn-outline-primary w-100" disabled>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-primary text-white text-center py-3">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Copilot Shoe Shop. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

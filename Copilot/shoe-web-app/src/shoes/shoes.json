@@ -1,0 +1,32 @@
+[
+    {
+        "image": "https://example.com/images/shoe1.jpg",
+        "name": "Running Shoe",
+        "price": 59.99,
+        "description": "Lightweight running shoe for daily training."
+    },
+    {
+        "image": "https://example.com/images/shoe2.jpg",
+        "name": "Basketball Shoe",
+        "price": 89.99,
+        "description": "High-top basketball shoe for better ankle support."
+    },
+    {
+        "image": "https://example.com/images/shoe3.jpg",
+        "name": "Casual Sneaker",
+        "price": 49.99,
+        "description": "Comfortable sneaker for everyday wear."
+    },
+    {
+        "image": "https://example.com/images/shoe4.jpg",
+        "name": "Formal Shoe",
+        "price": 99.99,
+        "description": "Elegant formal shoe for special occasions."
+    },
+    {
+        "image": "https://example.com/images/shoe5.jpg",
+        "name": "Sandals",
+        "price": 29.99,
+        "description": "Open-toe sandals for warm weather."
+    }
+]
